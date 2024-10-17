@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>AR Business Card</title>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://ar-js-org.github.io/AR.js/aframe/build/aframe-ar.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a-scene embedded arjs>
+        <!-- Lighting -->
+        <a-light type="ambient" color="#ffffff" intensity="0.7"></a-light>
+        <a-light type="directional" color="#ffffff" intensity="1" position="-1 1 1"></a-light>
+
+        <!-- Marker for AR experience -->
+        <a-marker type="pattern" url="./marker.patt" id="marker">
+
+            <!-- Bottom: Video -->
+            <a-video id="background-video" src="./assets/video.mp4" position="2.9 0 0" scale="3 2 2" autoplay="true" loop="true" visible="false"></a-video>
+
+            <!-- Above the video: 3D Model -->
+            <a-entity id="model-above-video" gltf-model="./assets/krishna.glb" scale="0.5 0.5 0.5" position="0 0 0" rotation="0 0 0" visible="false"></a-entity>
+
+            <!-- Right side: 3D Model -->
+            <a-entity id="right-side-model" gltf-model="./assets/poster.glb" scale="0.1 0.1 0.1" position="0 0 0" rotation="0 0 0" visible="false"></a-entity>
+
+            <!-- Left side: Image and Text -->
+            <a-image id="left-side-image" src="./assets/rudram.jpg" scale="1 2 2" position="-1.5 0 0" visible="false"></a-image>
+            <a-text id="left-side-text" value="I WISH YOU A HAPPY DIWALI"  position="1.2 0.2 0.8" scale="1 1 1" color="#F9F9F9" font="https://cdn.aframe.io/fonts/Exo2Bold.fnt"  visible="false">
+    </a-text>
+
+        </a-marker>
+
+        <!-- Camera -->
+        <a-entity camera></a-entity>
+    </a-scene>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

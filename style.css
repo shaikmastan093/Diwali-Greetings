@@ -1,0 +1,41 @@
+/* Basic body styles */
+body {
+    margin: 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+
+a-scene {
+    width: 100%;
+    height: 100%;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    a-text {
+        font-size: 1.5em; /* Smaller font for mobile */
+    }
+
+    a-image {
+        scale: 0.2 0.2 0.2; /* Smaller images for mobile */
+    }
+
+    a-video {
+        scale: 1 0.5 0.5; /* Smaller video for mobile */
+    }
+
+    a-entity {
+        scale: 0.2 0.2 0.2; /* Smaller models for mobile */
+    }
+    #left-side-text {
+        text-shadow: 0 0 15px rgba(255, 255, 0, 0.9), 0 0 20px rgba(255, 165, 0, 0.8), 0 0 30px rgba(255, 140, 0, 0.7);
+        font-weight: bold;
+        font-family: 'Exo', sans-serif;
+    }
+    
+}
